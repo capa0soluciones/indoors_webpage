@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Indoors - Tributo a The Doors</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Menú fijo -->
+  <header class="fixed-menu">
+    <nav>
+      <div class="logo">
+        <span class="logo-text"><a href="#banda"><img src="assets/images/logo.png" alt="InDoors Logo" width="100"></a></span>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="menu-items" id="menu-items">
+        <ul>
+          <li><a href="#banda">La Banda</a></li>
+          <li><a href="#eventos">Eventos</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Sección: La Banda -->
+  <section id="banda" class="section-banda" data-aos="fade-up">
+    <div class="background-image"></div>
+    <div id="main-logo" class="main-logo">
+      <img src="assets/images/logo.png" alt="InDoors Logo" class="main-logo-img" width="600">
+      <h2>Tributo a The Doors</h2>
+    </div>
+    <div class="carousel-container integrantes-carousel">
+      <button class="carousel-button prev integrantes-prev">&lt;</button>
+      <div class="integrantes" id="integrantes-carousel">
+        <article class="integrante" data-aos="fade-up" data-aos-delay="100">
+          <img class="integrante-img" src="assets/images/integrantes/gabi.jpg" alt="Gabriel - Cantante">
+          <h2><i class="fas fa-microphone-alt"></i> Gabriel Hazz</h2>
+          <p>Voz</p>
+        </article>
+        <article class="integrante" data-aos="fade-up" data-aos-delay="200">
+          <img class="integrante-img" src="assets/images/integrantes/jony.jpg" alt="Jonathan - Tecladista y Bajos">
+          <h2>> Jonathan Mazzini</h2>
+          <p>Teclados y bajos</p>
+        </article>
+        <article class="integrante" data-aos="fade-up" data-aos-delay="300">
+          <img class="integrante-img" src="assets/images/integrantes/ivan.jpg" alt="Iván S. - Baterista">
+          <h2><i class="fas fa-drum"></i> Iván Silberstein</h2>
+          <p>Percusión</p>
+        </article>
+        <article class="integrante" data-aos="fade-up" data-aos-delay="400">
+          <img class="integrante-img" src="assets/images/integrantes/tejo.jpg" alt="Cristian - Guitarrista">
+          <h2><i class="fas fa-guitar"></i> Cristian Tejo Arroyo</h2>
+          <p>Guitarra</p>
+        </article>
+      </div>
+      <button class="carousel-button next integrantes-next">&gt;</button>
+    </div>
+  </section>
+
+  <!-- Sección: Eventos Próximos -->
+  <section id="eventos" class="section-eventos" data-aos="fade-up">
+    <div class="background-image"></div>
+    <h1 class="section-title">Eventos Próximos</h1>
+    <div class="eventos-container">
+      <article class="evento" data-aos="fade-up" data-aos-delay="100">
+        <h2>Lorem Itzum</h2>
+        <p>Fecha: 12/04/2025</p>
+        <p>Lorem Itzum dolor sit amet...</p>
+      </article>
+      <article class="evento" data-aos="fade-up" data-aos-delay="200">
+        <h2>Lorem Itzum</h2>
+        <p>Fecha: 12/04/2025</p>
+        <p>Lorem Itzum dolor sit amet...</p>
+      </article>
+      <article class="evento" data-aos="fade-up" data-aos-delay="300">
+        <h2>Lorem Itzum</h2>
+        <p>Fecha: 12/04/2025</p>
+        <p>Lorem Itzum dolor sit amet...</p>
+      </article>
+      <!-- Más eventos -->
+    </div>
+  </section>
+
+  <!-- Sección: Galería -->
+  <section id="galeria" class="section-galeria" data-aos="fade-up">
+    <div class="background-image"></div>
+    <h1 class="section-title">Galería</h1>
+    <div class="carousel-container galeria-carousel">
+      <button class="carousel-button prev galeria-prev">&lt;</button>
+      <div class="galeria-container" id="galeria-container">
+        <!-- Las imágenes se cargarán aquí automáticamente -->
+      </div>
+      <button class="carousel-button next galeria-next">&gt;</button>
+    </div>
+  </section>
+
+  <!-- Sección: Contacto -->
+  <section id="contacto" class="section-contact" data-aos="fade-up">
+    <div class="background-image"></div>
+    <h1 class="section-title">Contacto</h1>
+    <form class="contact-form" data-aos="fade-up" data-aos-delay="100">
+      <input type="text" name="nombre" placeholder="Nombre" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="mensaje" placeholder="Tu mensaje..." required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <div class="social-media" data-aos="fade-up" data-aos-delay="200">
+      <a href="https://www.instagram.com/indoors.ok" target="_blank"><h1><i class="fab fa-instagram" style="color: #fff"></i></h1></a>
+      <!-- Puedes agregar más iconos según sea necesario -->
+    </div>
+  </section>
+
+  <!-- Agrega el script para el carrusel -->
+  <script src="assets/js/carrusel.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800, // Duración de la animación en milisegundos
+      once: true     // Animación solo una vez
+    });
+  
+    // Funcionalidad del menú de hamburguesa
+    const hamburger = document.getElementById('hamburger');
+    const menuItems = document.getElementById('menu-items');
+  
+    hamburger.addEventListener('click', () => {
+      menuItems.classList.toggle('show');
+    });
+  
+    // Funcionalidad del carrusel de integrantes
+    const integrantesCarousel = document.getElementById('integrantes-carousel');
+    const integrantesPrevButton = document.querySelector('.integrantes-prev');
+    const integrantesNextButton = document.querySelector('.integrantes-next');
+  
+    integrantesNextButton.addEventListener('click', () => {
+      integrantesCarousel.scrollBy({ left: integrantesCarousel.clientWidth, behavior: 'smooth' });
+    });
+  
+    integrantesPrevButton.addEventListener('click', () => {
+      integrantesCarousel.scrollBy({ left: -integrantesCarousel.clientWidth, behavior: 'smooth' });
+    });
+  
+    // Funcionalidad del carrusel de galería
+    const galeriaCarousel = document.getElementById('galeria-container');
+    const galeriaPrevButton = document.querySelector('.galeria-prev');
+    const galeriaNextButton = document.querySelector('.galeria-next');
+  
+    galeriaNextButton.addEventListener('click', () => {
+      galeriaCarousel.scrollBy({ left: galeriaCarousel.clientWidth, behavior: 'smooth' });
+    });
+  
+    galeriaPrevButton.addEventListener('click', () => {
+      galeriaCarousel.scrollBy({ left: -galeriaCarousel.clientWidth, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>

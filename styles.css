@@ -1,0 +1,539 @@
+/* Importar tipografías (asegúrate de tener los archivos en assets/fonts/) */
+@font-face {
+  font-family: 'CooperBlack';
+  src: url('assets/fonts/CooperFiveOpti-Black 2.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'CooperGothic';
+  src: url('assets/fonts/copperplatecc.ttf') format('truetype');
+}
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'CooperBlack', sans-serif;
+  line-height: 1.6;
+}
+
+/* Estilos para el logo principal */
+.main-logo {
+  text-align: center;
+  margin: 20px 0;
+  padding-left: 20px;
+  text-shadow: 10px 10px 1cap rgba(0, 0, 0, 0.5);
+}
+
+.main-logo h1 {
+  font-size: 8rem;
+  color: #ffffff;
+  margin-bottom: 0;
+}
+
+.main-logo h2 {
+  font-family: 'CooperBlack', sans-serif;
+  font-size: 1rem;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1;
+  text-shadow: 10px 10px 1cap rgba(0, 0, 0, 0.5);
+}
+
+/* Menú fijo */
+.fixed-menu {
+  width: 100%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #340202;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-image: url('assets/images/smoke.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+.fixed-menu nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fixed-menu .logo-text {
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-shadow: 10px 10px 1cap rgba(0, 0, 0, 0.5);
+  margin-left: 20px;
+  display: none;
+}
+
+.fixed-menu.sticky {
+  background-color: rgba(89, 1, 1, 0.5);
+  box-shadow: 0 2px 5px rgba(89, 1, 1, 0.5);
+  background-image: none;
+}
+
+.fixed-menu.sticky .logo-text {
+  display: inline;
+}
+
+.fixed-menu nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fixed-menu nav ul li {
+  margin: 10px 20px;
+}
+
+.fixed-menu nav ul li a {
+  color: #f3e03b;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: 'CooperGothic', sans-serif;
+}
+
+.fixed-menu nav ul li a:hover {
+  color: #ffffff;
+}
+
+/* Títulos principales con tipografía Densmore */
+.section-title {
+  font-family: 'CooperBlack', sans-serif;
+  text-align: center;
+  margin: 80px 0 20px;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 10px 10px 1cap rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para el menú de hamburguesa */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.menu-items {
+  display: flex;
+}
+
+.menu-items ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-items ul li {
+  margin: 10px 20px;
+}
+
+.menu-items ul li a {
+  color: #f3e03b;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: 'CooperGothic', sans-serif;
+}
+
+.menu-items ul li a:hover {
+  color: #ffffff;
+}
+
+/* Estilos responsivos para el logo principal */
+@media (max-width: 768px) {
+  .main-logo-img {
+    width: 80%; /* Ajusta el tamaño del logo para pantallas pequeñas */
+  }
+
+  .main-logo h2 {
+    font-size: 1rem; /* Ajusta el tamaño del texto del logo para pantallas pequeñas */
+  }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .menu-items {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .menu-items.show {
+    display: flex;
+  }
+
+  .menu-items ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-items ul li {
+    margin: 10px 0;
+  }
+}
+
+/* Sección de integrantes */
+/* Estilos para el carrusel de integrantes */
+.integrantes-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70vh; /* Ocupa el 100% de la altura de la pantalla */
+  overflow: hidden;
+}
+
+.integrantes {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.integrante {
+  flex: 0 0 100%; /* Cada integrante ocupa el 100% del ancho del carrusel */
+  max-width: 100%;
+  height: 100%; /* Ocupa el 100% de la altura del carrusel */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.integrante-img {
+  max-width: 80%; /* Ajusta el tamaño de la imagen */
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 0 20px 10px rgba(39, 39, 39, 0.7);
+}
+
+.integrante h2 {
+  font-family: 'CooperGothic', sans-serif;
+  font-size: 2rem; /* Ajusta el tamaño del texto */
+  color: #ffffff;
+  text-shadow: 10px 10px 1cap rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+  text-align: center;
+}
+
+.integrante p {
+  font-size: 1.5rem; /* Ajusta el tamaño del texto */
+  color: #ffffff;
+  text-shadow: 10px 10px 1cap rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.integrantes-prev {
+  left: 0;
+}
+
+.integrantes-next {
+  right: 0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .integrantes {
+    flex-direction: row;
+    overflow-x: scroll;
+  }
+
+  .integrante {
+    width: 100%;
+  }
+
+  .integrante-img {
+    max-width: 90%; /* Ajusta el tamaño de la imagen para pantallas pequeñas */
+    height: auto;
+  }
+
+  .integrante h2 {
+    font-size: 50% ; /* Ajusta el tamaño del texto para pantallas pequeñas */
+  }
+
+  .integrante p {
+    font-size: 50% ; /* Ajusta el tamaño del texto para pantallas pequeñas */
+  }
+}
+
+/* Estilos para el icono de piano */
+.icono-piano {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  border: none !important;
+  outline: none !important;
+  stroke: none !important;
+}
+
+/* Sección de eventos */
+.eventos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.evento {
+  background-color: #1a1a1a;
+  padding: 20px;
+  margin: 10px;
+  width: 60%;
+  border-left: 5px solid #800000;
+}
+
+/* Estilos para el carrusel de galería */
+.galeria-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.galeria-container {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.galeria-prev {
+  left: 0;
+}
+
+.galeria-next {
+  right: 0;
+}
+
+.slide {
+  min-width: 100%;
+  transition: transform 0.5s ease;
+}
+
+/* Redes Sociales */
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+/* Formulario de contacto */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-family: 'CooperBlack', sans-serif;
+}
+
+.contact-form button {
+  padding: 15px;
+  background-color: #800000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: 'CooperBlack', sans-serif;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #a00000;
+}
+
+/* Estilos para las secciones */
+section {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 50px 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+section::before,
+section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  pointer-events: none;
+}
+
+section::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
+}
+
+section::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
+}
+
+/* Ajuste de opacidad del fondo */
+.section-contact .background-image,
+.section-eventos .background-image,
+.section-banda .background-image,
+.section-galeria .background-image,
+.section-redes .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.4;
+  z-index: -1;
+  filter: grayscale(100%);
+}
+
+/* Ajuste de opacidad del fondo para cada sección */
+.section-contact .background-image {
+  background-image: url('assets/images/backgrounds/contacto.jpg');
+}
+
+.section-eventos .background-image {
+  background-image: url('assets/images/backgrounds/eventos.jpg');
+}
+
+.section-banda .background-image {
+  background-image: url('assets/images/backgrounds/labanda.jpg');
+}
+
+.section-galeria .background-image {
+  background-image: url('assets/images/backgrounds/galeria.jpg');
+}
+
+.section-redes .background-image {
+  background-image: url('assets/images/backgrounds/redes.jpg');
+}
+
+/* Estilos para la galería */
+.section-galeria {
+  padding: 50px 20px;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.galeria-container {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.thumbnail {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.carousel-button.prev {
+  left: 0;
+}
+
+.carousel-button.next {
+  right: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.large-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
