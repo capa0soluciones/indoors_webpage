@@ -357,23 +357,23 @@ body {
   background-color: #1a1a1a;
   padding: 20px;
   margin: 10px;
-  width: 60%;
+  width: 20%;
   border-left: 5px solid #800000;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: left;
+  text-align: left;
 }
 
 .evento img {
   max-width: 40%;
-  height: auto;
   border-radius: 10px;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .evento h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #ffffff;
   margin-bottom: 10px;
 }
@@ -394,13 +394,6 @@ body {
     padding: 10px;
   }
 
-  .evento h2 {
-    font-size: 1.5rem;
-  }
-
-  .evento p {
-    font-size: 1rem;
-  }
 }
 
 /* Estilos para el carrusel de galería */
@@ -477,6 +470,17 @@ body {
 section {
   position: relative;
   height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 50px 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.section-eventos {
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
