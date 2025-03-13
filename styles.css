@@ -204,7 +204,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 70vh; /* Ocupa el 100% de la altura de la pantalla */
+  height: 70vh; /* Ocupa el 70% de la altura de la pantalla */
   overflow: hidden;
 }
 
@@ -287,11 +287,11 @@ body {
   }
 
   .integrante h2 {
-    font-size: 50% ; /* Ajusta el tamaño del texto para pantallas pequeñas */
+    font-size: 1.2rem; /* Ajusta el tamaño del texto para pantallas pequeñas */
   }
 
   .integrante p {
-    font-size: 50% ; /* Ajusta el tamaño del texto para pantallas pequeñas */
+    font-size: 1rem; /* Ajusta el tamaño del texto para pantallas pequeñas */
   }
 }
 
@@ -318,6 +318,44 @@ body {
   margin: 10px;
   width: 60%;
   border-left: 5px solid #800000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.evento img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.evento h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.evento p {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+/* Estilos responsivos para eventos */
+@media (max-width: 768px) {
+  .evento {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .evento h2 {
+    font-size: 1.5rem;
+  }
+
+  .evento p {
+    font-size: 1rem;
+  }
 }
 
 /* Estilos para el carrusel de galería */
@@ -536,4 +574,69 @@ section::after {
   max-width: 90%;
   max-height: 90%;
   border-radius: 10px;
+}
+/* Estilos para la sección de bienvenida */
+.section-bienvenida {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+
+.welcome-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Estilos responsivos para el logo principal */
+@media (max-width: 768px) {
+  .main-logo-img {
+    width: 80%; /* Ajusta el tamaño del logo para pantallas pequeñas */
+  }
+
+  .welcome-content h2 {
+    font-size: 1rem; /* Ajusta el tamaño del texto del logo para pantallas pequeñas */
+  }
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Asegura que el video esté detrás del contenido */
+}
+
+#background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video cubra toda la pantalla */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según sea necesario */
+  z-index: 0; /* Asegura que el overlay esté sobre el video pero detrás del contenido */
+}
+
+.welcome-content {
+  z-index: 1; /* Asegura que el contenido esté sobre el overlay */
+}
+
+.welcome-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.welcome-content p {
+  font-size: 1.5rem;
 }
