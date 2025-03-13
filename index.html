@@ -85,7 +85,7 @@
         <p>Cabrera 4255 Palermo</p>
         <p>Fecha: Sábado 15/04/2025</p>
         <p>Horario: 23:00 hs</p>
-        <p>Con tu entrada podes quedarte a disfrutar de la mejor música de los 80/90/2000s !!!!</p>
+        <p2>Con tu entrada podes quedarte a disfrutar de la mejor música de los 80/90/2000s !!!!</p2>
         <img src="assets/images/eventos/liverpool.jpg" alt="Liverpool Club Palermo">
       </article>
       <!-- Más eventos -->
@@ -137,6 +137,13 @@
   
     hamburger.addEventListener('click', () => {
       menuItems.classList.toggle('show');
+    });
+
+    // Cerrar el menú al hacer clic fuera de él
+    document.addEventListener('click', (event) => {
+      if (!menuItems.contains(event.target) && !hamburger.contains(event.target)) {
+        menuItems.classList.remove('show');
+      }
     });
   
     // Funcionalidad del carrusel de integrantes

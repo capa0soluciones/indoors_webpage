@@ -154,6 +154,47 @@ body {
   color: #ffffff;
 }
 
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .menu-items {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .menu-items.show {
+    display: flex;
+  }
+
+  .menu-items ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-items ul li {
+    margin: 10px 0;
+  }
+}
+.menu-items ul li a {
+  color: #f3e03b;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: 'CooperGothic', sans-serif;
+}
+
+.menu-items ul li a:hover {
+  color: #ffffff;
+}
+
 /* Estilos responsivos para el logo principal */
 @media (max-width: 768px) {
   .main-logo-img {
@@ -325,23 +366,27 @@ body {
 }
 
 .evento img {
-  max-width: 100%;
+  max-width: 40%;
   height: auto;
   border-radius: 10px;
   margin-bottom: 10px;
 }
 
 .evento h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #ffffff;
   margin-bottom: 10px;
 }
 
 .evento p {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   color: #ffffff;
 }
 
+.evento p2 {
+  font-size: 0.6rem;
+  color: #ffffff;
+}
 /* Estilos responsivos para eventos */
 @media (max-width: 768px) {
   .evento {
@@ -590,7 +635,7 @@ section::after {
   font-size: 2rem;
   margin-bottom: 20px;
 }
-
+  
 /* Estilos responsivos para el logo principal */
 @media (max-width: 768px) {
   .main-logo-img {
