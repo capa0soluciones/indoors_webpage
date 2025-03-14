@@ -1,53 +1,49 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const galeriaContainer = document.getElementById('galeria-container');
-  const imageFolder = 'assets/images/galeria/images/';
-  const thumbnailFolder = 'assets/images/galeria/thumbnails/';
-  const jsonFile = 'assets/images/galeria/images.json';
-
-  fetch(jsonFile)
+  // Cargar imágenes de la galería desde el JSON
+  fetch('assets/images/galeria/imagenes.json')
     .then(response => response.json())
-    .then(images => {
-      images.forEach(image => {
+    .then(data => {
+      const galeriaContainer = document.getElementById('galeria-container');
+      data.imagenes.forEach(imagen => {
+        const link = document.createElement('a');
+        link.href = imagen.fullsize;
+        link.setAttribute('data-lightbox', 'galeria');
+        link.setAttribute('data-title', imagen.caption);
+
         const img = document.createElement('img');
-        img.src = thumbnailFolder + image;
-        img.alt = 'Galería de imágenes';
-        img.classList.add('thumbnail');
-        img.addEventListener('click', () => showImage(image));
-        galeriaContainer.appendChild(img);
+        img.src = imagen.thumbnail;
+        img.alt = imagen.caption;
+
+        link.appendChild(img);
+        galeriaContainer.appendChild(link);
       });
     })
-    .catch(error => console.error('Error loading images:', error));
+    .catch(error => console.error('Error al cargar las imágenes:', error));
 
-  function showImage(image) {
-    const overlay = document.createElement('div');
-    overlay.classList.add('overlay');
-    const img = document.createElement('img');
-    img.src = imageFolder + image;
-    img.alt = 'Imagen grande';
-    img.classList.add('large-image');
-    overlay.appendChild(img);
-    document.body.appendChild(overlay);
-
-    overlay.addEventListener('click', () => {
-      document.body.removeChild(overlay);
-    });
-  }
-
-  const prevButton = document.querySelector('.carousel-button.prev');
-  const nextButton = document.querySelector('.carousel-button.next');
-
-  prevButton.addEventListener('click', () => {
-    galeriaContainer.scrollBy({
-      left: -galeriaContainer.clientWidth,
-      behavior: 'smooth'
-    });
-  });
+  // Funcionalidad del carrusel de la galería
+  const galeriaContainer = document.getElementById('galeria-container');
+  const prevButton = document.querySelector('.galeria-prev');
+  const nextButton = document.querySelector('.galeria-next');
 
   nextButton.addEventListener('click', () => {
-    galeriaContainer.scrollBy({
-      left: galeriaContainer.clientWidth,
-      behavior: 'smooth'
-    });
+    galeriaContainer.scrollBy({ left: galeriaContainer.clientWidth, behavior: 'smooth' });
+  });
+
+  prevButton.addEventListener('click', () => {
+    galeriaContainer.scrollBy({ left: -galeriaContainer.clientWidth, behavior: 'smooth' });
+  });
+
+  // Funcionalidad del carrusel de integrantes
+  const integrantesCarousel = document.getElementById('integrantes-carousel');
+  const integrantesPrevButton = document.querySelector('.integrantes-prev');
+  const integrantesNextButton = document.querySelector('.integrantes-next');
+
+  integrantesNextButton.addEventListener('click', () => {
+    integrantesCarousel.scrollBy({ left: integrantesCarousel.clientWidth, behavior: 'smooth' });
+  });
+
+  integrantesPrevButton.addEventListener('click', () => {
+    integrantesCarousel.scrollBy({ left: -integrantesCarousel.clientWidth, behavior: 'smooth' });
   });
 });
 

@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
 </head>
 <body>
   <!-- Sección de Bienvenida -->
@@ -19,7 +20,20 @@
     <div class="overlay"></div>
     <div id="main-logo" class="welcome-content">
       <img src="assets/images/logo-full.png" alt="InDoors Logo" class="main-logo-img" width="600">
+    </div>
+    <a href="#resena" class="scroll-down">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
 
+  <!-- Sección de Reseña -->
+  <section id="resena" class="section-resena" data-aos="fade-up">
+    <div class="background-image"></div>
+    <div class="resena-content">
+      <p>La llegada de The Doors a la escena del rock en 1967 marcó no solo el inicio de una serie de éxitos y álbumes que se convertirían en grandes clásicos, sino también de algo mucho más grande: una relación profunda entre los músicos y el público. El cuarteto de Los Ángeles desafió, confrontó e inspiró sin descanso a sus fans, lanzándose de cabeza al corazón de las tinieblas mientras otras bandas parloteaban sobre la paz y el amor.</p>
+      <p>Con un sonido embriagador que mezclaba géneros, canciones provocadoras e intransigentes y el poder hipnotizador de la poesía y la presencia del cantante Jim Morrison, The Doors tuvo un impacto transformador en la música y cultura popular.</p>
+      <p>Indoors, realiza un homenaje a The Doors, destacando la esencia mística en sus presentaciones en vivo, haciendo que el público pueda experimentar el éxtasis de aquella época hoy.</p>
+      <p>Manteniendo la formación original, Indoors realza la estética 70s no solo como parte de sus outfit sino en la calidad de sonido que utiliza para sus shows.</p>
     </div>
   </section>
 
@@ -35,6 +49,7 @@
       <div class="menu-items" id="menu-items">
         <ul>
           <li><a href="#bienvenida">Inicio</a></li>
+          <li><a href="#resena">Reseña</a></li>
           <li><a href="#banda">La Banda</a></li>
           <li><a href="#eventos">Eventos</a></li>
           <li><a href="#galeria">Galería</a></li>
@@ -44,36 +59,37 @@
     </nav>
   </header>
 
-  <!-- Sección: La Banda -->
-  <section id="banda" class="section-banda" data-aos="fade-up">
-    <div class="background-image"></div>
-    <div class="carousel-container integrantes-carousel">
-      <button class="carousel-button prev integrantes-prev">&lt;</button>
-      <div class="integrantes" id="integrantes-carousel">
-        <article class="integrante" data-aos="fade-up" data-aos-delay="100">
-          <img class="integrante-img" src="assets/images/integrantes/gabi.jpg" alt="Gabriel - Cantante">
-          <h2><i class="fas fa-microphone-alt"></i> Gabriel Hazz</h2>
-          <p>Voz</p>
-        </article>
-        <article class="integrante" data-aos="fade-up" data-aos-delay="200">
-          <img class="integrante-img" src="assets/images/integrantes/jony.jpg" alt="Jonathan - Tecladista y Bajos">
-          <h2><img class="icono-piano" src="assets/images/svg/piano.svg" alt="Piano"> Jonathan Mazzini</h2>
-          <p>Teclados y bajos</p>
-        </article>
-        <article class="integrante" data-aos="fade-up" data-aos-delay="300">
-          <img class="integrante-img" src="assets/images/integrantes/ivan.jpg" alt="Iván S. - Baterista">
-          <h2><i class="fas fa-drum"></i> Iván Silberstein</h2>
-          <p>Percusión</p>
-        </article>
-        <article class="integrante" data-aos="fade-up" data-aos-delay="400">
-          <img class="integrante-img" src="assets/images/integrantes/tejo.jpg" alt="Cristian - Guitarrista">
-          <h2><i class="fas fa-guitar"></i> Cristian Tejo Arroyo</h2>
-          <p>Guitarra</p>
-        </article>
-      </div>
-      <button class="carousel-button next integrantes-next">&gt;</button>
+<!-- Sección: La Banda -->
+<section id="banda" class="section-banda" data-aos="fade-up">
+  <div class="background-image"></div>
+  <h1 class="section-title">La Banda</h1>
+  <div class="carousel-container integrantes-carousel">
+    <button class="carousel-button prev integrantes-prev">&lt;</button>
+    <div class="integrantes" id="integrantes-carousel">
+      <article class="integrante">
+        <img class="integrante-img" src="assets/images/integrantes/gabi.jpg" alt="Gabriel - Cantante">
+        <h2><i class="fas fa-microphone-alt"></i> Gabriel Hazz</h2>
+        <p>Voz</p>
+      </article>
+      <article class="integrante">
+        <img class="integrante-img" src="assets/images/integrantes/jony.jpg" alt="Jonathan - Tecladista y Bajos">
+        <h2><img class="icono-piano" src="assets/images/svg/piano.svg" alt="Piano"> Jonathan Mazzini</h2>
+        <p>Teclados y bajos</p>
+      </article>
+      <article class="integrante">
+        <img class="integrante-img" src="assets/images/integrantes/ivan.jpg" alt="Iván S. - Baterista">
+        <h2><i class="fas fa-drum"></i> Iván Silberstein</h2>
+        <p>Percusión</p>
+      </article>
+      <article class="integrante" >
+        <img class="integrante-img" src="assets/images/integrantes/tejo.jpg" alt="Cristian - Guitarrista">
+        <h2><i class="fas fa-guitar"></i> Cristian Tejo Arroyo</h2>
+        <p>Guitarra</p>
+      </article>
     </div>
-  </section>
+    <button class="carousel-button next integrantes-next">&gt;</button>
+  </div>
+</section>
 
   <!-- Sección: Eventos Próximos -->
   <section id="eventos" class="section-eventos" data-aos="fade-up">
@@ -92,7 +108,6 @@
     </div>
   </section>
 
-  <!-- Sección: Galería -->
   <section id="galeria" class="section-galeria" data-aos="fade-up">
     <div class="background-image"></div>
     <h1 class="section-title">Galería</h1>
@@ -125,8 +140,51 @@
   <script src="assets/js/carrusel.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script>
-    AOS.init({
+    document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('nav ul li a');
+    const animationDuration = 800; // Duración de la animación en milisegundos
+
+    links.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          setTimeout(() => {
+            window.scrollTo({
+              top: targetElement.offsetTop,
+              behavior: 'smooth'
+            });
+          }, animationDuration);
+        }
+      });
+    });
+    fetch('assets/images/galeria/imagenes.json')
+      .then(response => response.json())
+      .then(data => {
+        const galeriaContainer = document.getElementById('galeria-container');
+        data.imagenes.forEach(imagen => {
+          const link = document.createElement('a');
+          link.href = imagen.fullsize;
+          link.setAttribute('data-lightbox', 'galeria');
+          link.setAttribute('data-title', imagen.caption);
+
+          const img = document.createElement('img');
+          img.src = imagen.thumbnail;
+          img.alt = imagen.caption;
+
+          link.appendChild(img);
+          galeriaContainer.appendChild(link);
+        });
+      })
+      .catch(error => console.error('Error al cargar las imágenes:', error));
+  });
+
+    // Inicialización de AOS
+  AOS.init({
       duration: 800, // Duración de la animación en milisegundos
       once: true     // Animación solo una vez
     });
@@ -159,18 +217,6 @@
       integrantesCarousel.scrollBy({ left: -integrantesCarousel.clientWidth, behavior: 'smooth' });
     });
   
-    // Funcionalidad del carrusel de galería
-    const galeriaCarousel = document.getElementById('galeria-container');
-    const galeriaPrevButton = document.querySelector('.galeria-prev');
-    const galeriaNextButton = document.querySelector('.galeria-next');
-  
-    galeriaNextButton.addEventListener('click', () => {
-      galeriaCarousel.scrollBy({ left: galeriaCarousel.clientWidth, behavior: 'smooth' });
-    });
-  
-    galeriaPrevButton.addEventListener('click', () => {
-      galeriaCarousel.scrollBy({ left: -galeriaCarousel.clientWidth, behavior: 'smooth' });
-    });
   </script>
 </body>
 </html>

@@ -245,7 +245,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 70vh; /* Ocupa el 70% de la altura de la pantalla */
+  height: 50vh; /* Ajusta la altura del carrusel */
   overflow: hidden;
 }
 
@@ -258,8 +258,8 @@ body {
 }
 
 .integrante {
-  flex: 0 0 100%; /* Cada integrante ocupa el 100% del ancho del carrusel */
-  max-width: 100%;
+  flex: 0 0 auto;
+  width: 300px; /* Ajusta el ancho de cada integrante */
   height: 100%; /* Ocupa el 100% de la altura del carrusel */
   display: flex;
   flex-direction: column;
@@ -268,7 +268,7 @@ body {
 }
 
 .integrante-img {
-  max-width: 80%; /* Ajusta el tamaño de la imagen */
+  width: 100%;
   height: auto;
   border-radius: 15px;
   object-fit: cover;
@@ -277,7 +277,7 @@ body {
 
 .integrante h2 {
   font-family: 'CooperGothic', sans-serif;
-  font-size: 2rem; /* Ajusta el tamaño del texto */
+  font-size: 1.5rem; /* Ajusta el tamaño del texto */
   color: #ffffff;
   text-shadow: 10px 10px 1cap rgba(0, 0, 0, 0.5);
   margin-top: 10px;
@@ -285,7 +285,7 @@ body {
 }
 
 .integrante p {
-  font-size: 1.5rem; /* Ajusta el tamaño del texto */
+  font-size: 1rem; /* Ajusta el tamaño del texto */
   color: #ffffff;
   text-shadow: 10px 10px 1cap rgba(0, 0, 0, 0.5);
   text-align: center;
@@ -313,6 +313,10 @@ body {
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
+  .integrantes-carousel {
+    height: auto; /* Ajusta la altura del carrusel para pantallas pequeñas */
+  }
+
   .integrantes {
     flex-direction: row;
     overflow-x: scroll;
@@ -515,6 +519,7 @@ section::after {
 .section-eventos .background-image,
 .section-banda .background-image,
 .section-galeria .background-image,
+.section-resena .background-image,
 .section-redes .background-image {
   position: absolute;
   top: 0;
@@ -550,17 +555,19 @@ section::after {
   background-image: url('assets/images/backgrounds/redes.jpg');
 }
 
-/* Estilos para la galería */
-.section-galeria {
-  padding: 50px 20px;
+/* Estilos para la sección de Reseña */
+.section-resena .background-image{
+  background-image: url('assets/images/backgrounds/resena.jpg');
 }
 
-.carousel-container {
+/* Estilos para el carrusel de galería */
+.galeria-carousel {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 100%;
+  height: 80vh; /* Ajusta la altura del carrusel */
   margin: auto;
   overflow: hidden;
 }
@@ -570,12 +577,13 @@ section::after {
   gap: 10px;
   padding: 10px;
   overflow: hidden;
+  transition: transform 0.5s ease;
 }
 
 .thumbnail {
   flex: 0 0 auto;
-  width: 250px;
-  height: 200px;
+  width: 300px; /* Ajusta el ancho de las miniaturas */
+  height: 250px; /* Ajusta la altura de las miniaturas */
   border-radius: 10px;
   object-fit: cover;
   cursor: pointer;
@@ -604,6 +612,23 @@ section::after {
 
 .carousel-button.next {
   right: 0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .galeria-carousel {
+    height: auto; /* Ajusta la altura del carrusel para pantallas pequeñas */
+  }
+
+  .galeria-container {
+    flex-direction: row;
+    overflow-x: scroll;
+  }
+
+  .thumbnail {
+    width: 90%; /* Ajusta el tamaño de las miniaturas para pantallas pequeñas */
+    height: auto;
+  }
 }
 
 .overlay {
@@ -688,4 +713,120 @@ section::after {
 
 .welcome-content p {
   font-size: 1.5rem;
+}
+
+/* Estilos para la sección de Reseña */
+
+.section-resena .resena-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: 'CooperBlack', sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.section-resena .resena-content p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Estilos responsivos para la sección de Reseña */
+@media (max-width: 768px) {
+  .section-resena {
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .section-resena .resena-content {
+    padding: 15px;
+  }
+
+  .section-resena .resena-content p {
+    font-size: 1rem;
+  }
+}
+/* Estilos para la flecha de desplazamiento */
+.scroll-down {
+  position: absolute;
+  bottom: 20%; /* Ajusta la posición de la flecha para que esté más centrada verticalmente */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #fff;
+  animation: bounce 2s infinite;
+  text-decoration: none;
+}
+
+.scroll-down i {
+  font-size: 3rem;
+  color: #fff;
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Estilos responsivos para la flecha de desplazamiento */
+@media (max-width: 768px) {
+  .scroll-down {
+    bottom: 15%; /* Ajusta la posición de la flecha para pantallas pequeñas */
+    font-size: 1.5rem; /* Ajusta el tamaño de la flecha para pantallas pequeñas */
+  }
+
+  .scroll-down i {
+    font-size: 2rem; /* Ajusta el tamaño del icono de la flecha para pantallas pequeñas */
+  }
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%; /* Aumenta el ancho del carrusel */
+  height: 90vh; /* Aumenta la altura del carrusel */
+  margin: auto;
+  overflow: hidden;
+  /* posicionar en el medio tanto vertical como horizontalmente */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.galeria-container::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
 }
