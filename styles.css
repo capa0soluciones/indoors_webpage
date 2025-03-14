@@ -51,11 +51,10 @@ body {
 .fixed-menu {
   width: 100%;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: #340202;
+  background-color: #6B161F;
   position: fixed;
   top: 0;
   z-index: 1000;
-  background-image: url('assets/images/smoke.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -98,7 +97,7 @@ body {
 }
 
 .fixed-menu nav ul li a {
-  color: #f3e03b;
+  color: #F7DC50;
   text-decoration: none;
   font-size: 1.1rem;
   font-family: 'CooperGothic', sans-serif;
@@ -144,7 +143,7 @@ body {
 }
 
 .menu-items ul li a {
-  color: #f3e03b;
+  color: #ECDD31;
   text-decoration: none;
   font-size: 1.1rem;
   font-family: 'CooperGothic', sans-serif;
