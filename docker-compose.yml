@@ -1,7 +1,7 @@
 services:
-  web:
+  web-indoors:
     build: .
-    container_name: web
+    container_name: web-indoors
     volumes:
       - ./:/usr/share/nginx/html
     ports:
