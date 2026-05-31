@@ -381,8 +381,8 @@ body {
   display: block;
   overflow: hidden;
   cursor: zoom-in;
-  flex: 0 0 120px;
-  min-height: 200px;
+  flex: 0 0 110px;
+  min-height: 160px;
 }
 
 .ev-img {
@@ -495,6 +495,7 @@ body {
 
 .ev-map-link:hover { color: #F7DC50; }
 
+
 /* CTA */
 .ev-btn {
   display: flex;
@@ -512,6 +513,7 @@ body {
   border-radius: 6px;
   transition: background 0.25s ease, color 0.25s ease;
   flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .ev-btn:hover {
