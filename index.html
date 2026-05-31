@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
 </head>
 <body>
   <!-- Sección de Bienvenida -->
@@ -95,18 +94,63 @@
   <section id="eventos" class="section-eventos" data-aos="fade-up">
     <div class="background-image"></div>
     <h1 class="section-title">Eventos Próximos</h1>
-    <div class="eventos-container">
-      <article class="evento" data-aos="fade-up" data-aos-delay="300">
-        <img src="assets/images/eventos/mrjones.jpeg" alt="Indoors en Mr. Jones Pub">
-        <div class="evento-info">
-          <h2>Mr. Jones Pub</h2>
-          <p class="evento-fecha">Viernes 5 de Junio &middot; 22hs</p>
-          <p>Indoors &mdash; Tributo a The Doors</p>
-          <a href="https://www.passline.com/eventos-plano/indoors-tributo-a-the-doors-en-mr-jones-pub-509797" target="_blank" rel="noopener" class="evento-btn">Comprar Entradas</a>
+
+    <div class="ev-list">
+      <article class="ev-card" data-aos="fade-up" data-aos-delay="200">
+
+        <a class="ev-img-wrap" href="assets/images/eventos/mrjones.jpeg"
+           data-lightbox="eventos" data-title="Indoors en Mr. Jones Pub">
+          <img src="assets/images/eventos/mrjones.jpeg" alt="Indoors en Mr. Jones Pub" class="ev-img">
+          <span class="ev-badge">Próximo Show</span>
+        </a>
+
+        <div class="ev-body">
+          <div class="ev-top">
+            <h2 class="ev-title">Mr. Jones Pub</h2>
+            <p class="ev-subtitle">Indoors &mdash; Tributo a The Doors</p>
+
+            <div class="ev-divider"></div>
+
+            <ul class="ev-meta">
+              <li class="ev-meta-row">
+                <i class="fas fa-calendar-alt ev-meta-icon"></i>
+                <div>
+                  <span class="ev-meta-label">Fecha y hora</span>
+                  <span class="ev-meta-value">Viernes 5 de Junio &middot; 22:00 hs</span>
+                </div>
+              </li>
+              <li class="ev-meta-row">
+                <i class="fas fa-map-marker-alt ev-meta-icon"></i>
+                <div>
+                  <span class="ev-meta-label">Lugar</span>
+                  <span class="ev-meta-value">
+                    Ramos Mejía, Buenos Aires
+                    <a href="https://www.google.com/maps/place/Mr+Jones+Blues+Pub/@-34.6481678,-58.5681895,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcc7e7d796033b:0x38a2bd502b8a1eda!8m2!3d-34.6481678!4d-58.5656146!16s%2Fg%2F11b6zsqwww?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
+                       target="_blank" rel="noopener" class="ev-map-link">Ver en mapa ↗</a>
+                  </span>
+                </div>
+              </li>
+              <li class="ev-meta-row">
+                <i class="fas fa-ticket-alt ev-meta-icon"></i>
+                <div>
+                  <span class="ev-meta-label">Entradas</span>
+                  <span class="ev-meta-value">Disponibles en Passline</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="ev-footer">
+            <a href="https://www.passline.com/eventos-plano/indoors-tributo-a-the-doors-en-mr-jones-pub-509797"
+               target="_blank" rel="noopener" class="ev-btn">
+              <i class="fas fa-ticket-alt"></i>&nbsp; Comprar Entradas
+            </a>
+          </div>
         </div>
+
       </article>
-      <!-- Más eventos -->
     </div>
+
   </section>
 
   <section id="galeria" class="section-galeria" data-aos="fade-up">
@@ -132,11 +176,18 @@
     </div>
   </section>
 
+  <!-- Modal de imágenes -->
+  <div id="img-modal" class="img-modal" role="dialog" aria-modal="true">
+    <span class="img-modal-close" aria-label="Cerrar">&times;</span>
+    <button class="img-modal-nav img-modal-prev" aria-label="Anterior">&#8249;</button>
+    <img class="img-modal-content" id="img-modal-img" alt="">
+    <button class="img-modal-nav img-modal-next" aria-label="Siguiente">&#8250;</button>
+  </div>
+
   <!-- Agrega el script para el carrusel -->
   <script src="assets/js/carrusel.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script>
     AOS.init({ duration: 800, once: true });
 
