@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const img = document.createElement('img');
         img.src = imagen.thumbnail;
         img.alt = imagen.caption;
+        img.className = 'thumbnail';
 
         link.appendChild(img);
         galeriaContainer.appendChild(link);

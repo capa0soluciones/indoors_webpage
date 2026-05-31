@@ -252,8 +252,10 @@ body {
   display: flex;
   gap: 10px;
   padding: 10px;
-  overflow: hidden;
-  transition: transform 0.5s ease;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .integrante {
@@ -352,51 +354,81 @@ body {
 /* Sección de eventos */
 .eventos-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
 }
 
 .evento {
-  background-color: #1a1a1a;
-  padding: 20px;
-  margin: 10px;
-  width: 20%;
+  background-color: rgba(26, 26, 26, 0.9);
+  margin: 0;
+  width: 320px;
+  min-width: 280px;
   border-left: 5px solid #800000;
+  border-radius: 8px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: left;
   text-align: left;
 }
 
-.evento img {
-  max-width: 40%;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+.evento > img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 0;
+}
+
+.evento-info {
+  padding: 15px 18px 18px;
 }
 
 .evento h2 {
-  font-size: 1.2rem;
-  color: #ffffff;
-  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #F7DC50;
+  margin-bottom: 6px;
+}
+
+.evento-fecha {
+  font-size: 1rem;
+  color: #F7DC50;
+  margin-bottom: 8px;
 }
 
 .evento p {
-  font-size: 0.8rem;
-  color: #ffffff;
+  font-size: 0.85rem;
+  color: #cccccc;
+  margin-bottom: 12px;
 }
 
-.evento p2 {
-  font-size: 0.6rem;
-  color: #ffffff;
+.evento-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #800000;
+  color: #F7DC50;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: 'CooperGothic', sans-serif;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.evento-btn:hover {
+  background-color: #a00000;
+  color: #fff;
+}
+
 /* Estilos responsivos para eventos */
 @media (max-width: 768px) {
   .evento {
     width: 90%;
-    padding: 10px;
+    min-width: unset;
   }
-
 }
 
 /* Estilos para el carrusel de galería */
@@ -413,8 +445,10 @@ body {
   display: flex;
   gap: 10px;
   padding: 10px;
-  overflow: hidden;
-  transition: transform 0.5s ease;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .galeria-prev {
@@ -575,22 +609,26 @@ section::after {
   display: flex;
   gap: 10px;
   padding: 10px;
-  overflow: hidden;
-  transition: transform 0.5s ease;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .thumbnail {
   flex: 0 0 auto;
-  width: 300px; /* Ajusta el ancho de las miniaturas */
-  height: 250px; /* Ajusta la altura de las miniaturas */
-  border-radius: 10px;
+  width: 280px;
+  height: 210px;
+  border-radius: 8px;
   object-fit: cover;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
 }
 
 .thumbnail:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
+  box-shadow: 0 0 18px rgba(247, 220, 80, 0.35);
 }
 
 .carousel-button {
@@ -615,18 +653,9 @@ section::after {
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
-  .galeria-carousel {
-    height: auto; /* Ajusta la altura del carrusel para pantallas pequeñas */
-  }
-
-  .galeria-container {
-    flex-direction: row;
-    overflow-x: scroll;
-  }
-
   .thumbnail {
-    width: 90%; /* Ajusta el tamaño de las miniaturas para pantallas pequeñas */
-    height: auto;
+    width: 220px;
+    height: 165px;
   }
 }
 
@@ -797,13 +826,9 @@ section::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%; /* Aumenta el ancho del carrusel */
-  height: 90vh; /* Aumenta la altura del carrusel */
-  margin: auto;
+  width: 90%;
+  margin: 0 auto;
   overflow: hidden;
-  /* posicionar en el medio tanto vertical como horizontalmente */
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 

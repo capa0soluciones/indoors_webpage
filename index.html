@@ -97,7 +97,13 @@
     <h1 class="section-title">Eventos Próximos</h1>
     <div class="eventos-container">
       <article class="evento" data-aos="fade-up" data-aos-delay="300">
-        <h2>Próximamente</h2>
+        <img src="assets/images/eventos/mrjones.jpeg" alt="Indoors en Mr. Jones Pub">
+        <div class="evento-info">
+          <h2>Mr. Jones Pub</h2>
+          <p class="evento-fecha">Viernes 5 de Junio &middot; 22hs</p>
+          <p>Indoors &mdash; Tributo a The Doors</p>
+          <a href="https://www.passline.com/eventos-plano/indoors-tributo-a-the-doors-en-mr-jones-pub-509797" target="_blank" rel="noopener" class="evento-btn">Comprar Entradas</a>
+        </div>
       </article>
       <!-- Más eventos -->
     </div>
@@ -132,81 +138,20 @@
   <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('nav ul li a');
-    const animationDuration = 800; // Duración de la animación en milisegundos
+    AOS.init({ duration: 800, once: true });
 
-    links.forEach(link => {
-      link.addEventListener('click', (event) => {
-        event.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-
-        if (targetElement) {
-          setTimeout(() => {
-            window.scrollTo({
-              top: targetElement.offsetTop,
-              behavior: 'smooth'
-            });
-          }, animationDuration);
-        }
-      });
-    });
-    fetch('assets/images/galeria/imagenes.json')
-      .then(response => response.json())
-      .then(data => {
-        const galeriaContainer = document.getElementById('galeria-container');
-        data.imagenes.forEach(imagen => {
-          const link = document.createElement('a');
-          link.href = imagen.fullsize;
-          link.setAttribute('data-lightbox', 'galeria');
-          link.setAttribute('data-title', imagen.caption);
-
-          const img = document.createElement('img');
-          img.src = imagen.thumbnail;
-          img.alt = imagen.caption;
-
-          link.appendChild(img);
-          galeriaContainer.appendChild(link);
-        });
-      })
-      .catch(error => console.error('Error al cargar las imágenes:', error));
-  });
-
-    // Inicialización de AOS
-  AOS.init({
-      duration: 800, // Duración de la animación en milisegundos
-      once: true     // Animación solo una vez
-    });
-  
-    // Funcionalidad del menú de hamburguesa
     const hamburger = document.getElementById('hamburger');
     const menuItems = document.getElementById('menu-items');
-  
+
     hamburger.addEventListener('click', () => {
       menuItems.classList.toggle('show');
     });
 
-    // Cerrar el menú al hacer clic fuera de él
     document.addEventListener('click', (event) => {
       if (!menuItems.contains(event.target) && !hamburger.contains(event.target)) {
         menuItems.classList.remove('show');
       }
     });
-  
-    // Funcionalidad del carrusel de integrantes
-    const integrantesCarousel = document.getElementById('integrantes-carousel');
-    const integrantesPrevButton = document.querySelector('.integrantes-prev');
-    const integrantesNextButton = document.querySelector('.integrantes-next');
-  
-    integrantesNextButton.addEventListener('click', () => {
-      integrantesCarousel.scrollBy({ left: integrantesCarousel.clientWidth, behavior: 'smooth' });
-    });
-  
-    integrantesPrevButton.addEventListener('click', () => {
-      integrantesCarousel.scrollBy({ left: -integrantesCarousel.clientWidth, behavior: 'smooth' });
-    });
-  
   </script>
 </body>
 </html>
